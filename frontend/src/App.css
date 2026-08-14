@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+    --bg: #F7F7F4;
+    --surface: #FFFFFF;
+
+    --ink-900: #15161B;
+    --ink-600: #5B5C66;
+    --ink-400: #9A9BA5;
+
+    --border: #E6E6E1;
+    --border-soft: #EFEFEA;
+
+    --accent: #3B4FD9;
+    --accent-hover: #2F41C4;
+    --accent-soft: #EEF0FD;
+
+    --danger: #D64545;
+    --danger-soft: #FBEAEA;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 1px 2px rgba(21, 22, 27, 0.05);
+    --shadow-md: 0 10px 30px rgba(21, 22, 27, 0.07);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink-900);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+}
+
+button {
+    font-family: var(--font-body);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(59, 79, 217, 0.06), transparent 45%),
+        var(--bg);
+}
+
+.login-card {
+    width: 380px;
+    max-width: 100%;
+    padding: 40px 36px;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+}
+
+.brand-mark.small {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+.login-card h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink-900);
+}
+
+.login-card p {
+    color: var(--ink-600);
+    margin: 0 0 26px;
+    font-size: 14px;
+}
+
+.field-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-600);
+    margin-bottom: 6px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 11px 13px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: var(--font-body);
+    background: var(--surface);
+    color: var(--ink-900);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.login-card input::placeholder {
+    color: var(--ink-400);
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.login-card button:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.login-card button:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.login-card button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    min-height: 100vh;
+}
+
+header {
+    padding: 16px 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--ink-900);
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: white;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.header-user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.header-user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-900);
+}
+
+.role-badge {
+    font-size: 11px;
+    color: var(--ink-600);
+    text-transform: capitalize;
+}
+
+.logout-button {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--ink-600);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.logout-button:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+main {
+    max-width: 1080px;
+    margin: 36px auto;
+    padding: 0 24px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.welcome h2 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.welcome p {
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 14px;
+}
+
+.primary-button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.05s ease;
+    white-space: nowrap;
+}
+
+.primary-button:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: scale(0.99);
+}
+
+.primary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+section {
+    background: var(--surface);
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+section h2 {
+    margin: 0 0 20px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.add-section {
+    background: var(--accent-soft);
+    border-color: transparent;
+}
+
+.employee-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-600);
+    margin-bottom: 6px;
+}
+
+.employee-form input {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: var(--font-body);
+    background: var(--surface);
+    color: var(--ink-900);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.employee-form input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59, 79, 217, 0.12);
+}
+
+.employee-form input::placeholder {
+    color: var(--ink-400);
+}
+
+.add-submit {
+    grid-column: span 2;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+/* EMPLOYEE GRID */
+
+.employee-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.employee {
+    position: relative;
+    padding: 18px 18px 18px 20px;
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--dept-color, var(--accent));
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.employee:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.employee-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.employee h3 {
+    margin: 0 0 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-900);
+}
+
+.employee-email {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--ink-600);
+}
+
+.employee-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dept-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.salary {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink-900);
+    font-variant-numeric: tabular-nums;
+}
+
+.delete-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink-400);
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.delete-button:hover {
+    background: var(--danger-soft);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.empty-state {
+    padding: 36px 20px;
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-md);
+    color: var(--ink-600);
+    font-size: 14px;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 14px 18px;
+    }
+
+    .brand-name {
+        display: none;
+    }
+
+    .header-user-info {
+        display: none;
+    }
+
+    main {
+        margin: 24px auto;
+        padding: 0 16px 40px;
+    }
+
+    .employee-form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-submit {
+        grid-column: span 1;
+    }
+
+    .employee-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .employee,
+    .primary-button,
+    .login-card button {
+        transition: none;
+    }
+}
