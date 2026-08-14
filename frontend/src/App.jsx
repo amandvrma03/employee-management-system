@@ -465,7 +465,7 @@ function App() {
                                 <input
                                     id="employeeName"
                                     type="text"
-                                    placeholder="Jordan Lee"
+                                    placeholder="Your Name"
                                     value={employeeName}
                                     onChange={(e) =>
                                         setEmployeeName(
@@ -481,7 +481,7 @@ function App() {
                                 <input
                                     id="employeeEmail"
                                     type="email"
-                                    placeholder="jordan@company.com"
+                                    placeholder="abcd123@gmail.com"
                                     value={employeeEmail}
                                     onChange={(e) =>
                                         setEmployeeEmail(
