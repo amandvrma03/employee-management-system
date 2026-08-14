@@ -2,20 +2,18 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://employee-management-system-api-41k8.onrender.com";
 
 // =========================
 // HELPERS
 // =========================
 
-// Deterministic color assigned to a string (name / department)
-// so the same person or team always gets the same identity color.
 const PALETTE = [
-    { bg: "#EEF0FD", fg: "#3B4FD9" }, // indigo
-    { bg: "#E9F7F1", fg: "#0F9D77" }, // green
-    { bg: "#FDF2E3", fg: "#C17A1F" }, // amber
-    { bg: "#FBEAF6", fg: "#B23BA7" }, // magenta
-    { bg: "#E7F6F6", fg: "#1F8F8F" }, // teal
+    { bg: "#EEF0FD", fg: "#3B4FD9" },
+    { bg: "#E9F7F1", fg: "#0F9D77" },
+    { bg: "#FDF2E3", fg: "#C17A1F" },
+    { bg: "#FBEAF6", fg: "#B23BA7" },
+    { bg: "#E7F6F6", fg: "#1F8F8F" },
 ];
 
 function hashString(str) {
